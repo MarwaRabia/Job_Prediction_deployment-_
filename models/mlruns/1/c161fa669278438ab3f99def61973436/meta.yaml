@@ -1,0 +1,15 @@
+artifact_uri: ../models/mlruns/1/c161fa669278438ab3f99def61973436/artifacts
+end_time: 1677154771511
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: c161fa669278438ab3f99def61973436
+run_uuid: c161fa669278438ab3f99def61973436
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677154764852
+status: 3
+tags: []
+user_id: marwa

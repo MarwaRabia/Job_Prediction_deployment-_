@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+<script type="text/javascript" src="{{url_for('static', filename='multiselect-dropdown.js')}}" ></script>
+
+    <style>
+      select{
+        width: 30em;
+        margin: 5px;
+      }
+      label{
+        margin-right: 20px;
+        color: #03b0cb;
+        font-weight: bold;
+        align-items: flex-start
+        
+        
+      }
+     
+
+      .container {
+    /* margin-top: 20px; */
+    text-align: center;
+ 
+  }
+
+  .container .job ,.skill{
+        height: 800px;
+        width: 1050px;
+        /* background-color: rgb(227, 224, 224); */
+        margin: 10px;
+        padding: 20px;
+
+      }
+  #dropdown6{
+    width: 15em;
+  }
+  #skill{
+    display: flex; 
+    /* float: left;  */
+    padding: 20px;
+    align-content: center;
+  }
+    </style>
+
+
+
+<h1 > Job Predictor and appropiate skills 🧐  </h1>
+<br>
+<br>
+
+      <div class="container">
+        <form action="/predict" method="POST">
+          <section > 
+          <div >
+            <label for="dropdown1" style="font-size: medium;">Languages: &nbsp &nbsp </label>
+            <select id="dropdown1" name="dropdown1" multiple data-role="multiselect"  multiselect-search="true" multiselect-max-items="5">
+              {% for option in dropdown1_options %}
+              <option>{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          </section>
+
+        <br>
+        <br>
+        
+        <div >
+          <label for="dropdown2" style="font-size: medium;">Databases:&nbsp &nbsp &nbsp &nbsp</label>
+
+          <!-- <div style="height: 150px; overflow-y: auto;"> -->
+
+          <select size="4" id="dropdown2" name="dropdown2" multiple data-role="multiselect" multiselect-search="true" multiselect-max-items="5">
+            {% for option in dropdown2_options %}
+            <option>{{ option }}</option>
+            {% endfor %}
+          </select>
+
+          <!-- </div> -->
+        </div>
+        <br>
+        <br>
+
+       
+
+        
+
+        <div>
+          <label for="dropdown3" style="font-size: medium;">Web Frameworks:</label>
+          <select id="dropdown3" name="dropdown3" multiple data-role="multiselect" multiselect-search="true" multiselect-max-items="5">
+            {% for option in dropdown3_options %}
+            <option>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+          <label for="dropdown4" style="font-size: medium;">Other Tech:&nbsp &nbsp &nbsp &nbsp &nbsp</label>
+          <select id="dropdown4" name="dropdown4" multiple data-role="multiselect" multiselect-search="true" multiselect-max-items="5">
+            {% for option in dropdown4_options %}
+            <option>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <br>
+        <br>
+
+        <div>
+          <label for="dropdown5" style="font-size: medium;">Tools:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label>
+          <select id="dropdown5" name="dropdown5" multiple data-role="multiselect" multiselect-search="true" multiselect-max-items="5">
+            {% for option in dropdown5_options %}
+            <option>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <br>
+        <br>
+
+        <div class="job">
+        <h3>What is my current match ? 🤔</h3>
+        <br>
+        <br>
+          <!-- <button type="submit" class="btn btn-primary">Predict Job</button> -->
+          <div class="panel-body">
+            <input type ="submit" name="job" class="btn btn-primary" value="Predict Job">
+          </div>
+         
+            <!-- <h5> Job prediction is : <br>  {{ pred_val }}</h5> -->
+            <!-- <h3>Job prediction</h3> -->
+            <img alt="Models Image" src={{ pred_val_job }}
+                    class="rounded float-left" width="1300" height="700"/>
+        </div>
+
+
+        <div class="skill">
+          <div id="skill" >
+            <h3>What skills should I develop for  ? &nbsp &nbsp</h3>
+            <!-- <label for="dropdown6" style="font-size: medium;">Jobs:&nbsp &nbsp </label> -->
+            <select id="dropdown6" name="dropdown6"  >
+              {% for option in dropdown6_options %}
+              <option>{{ option }}</option>
+              {% endfor %}
+            </select>
+
+            <h6> &nbsp &nbsp &nbsp  🔹It takes some time🔹🔎</h6>
+
+            
+          </div>
+          <!-- <h3>What skills should i develop for  ? &nbsp &nbsp</h3> -->
+
+            <!-- <br> -->
+            <br>
+
+
+            <div class="panel-body">
+              <input type ="submit" name="skill" class="btn btn-primary" value="Predict skills">
+            </div>
+
+            <img alt="Models Image" src={{ pred_val_skill}}
+                    class="rounded float-left" width="1300" height="700">
+
+            <!-- <div class="panel-body">
+              <input type ="submit" name="action" value="Download">
+            </div> -->
+          
+
+            <!-- <button type="submit"  value="job" class="btn btn-primary">Predict Skills</button> -->
+
+
+              <!-- <h5> Job prediction is : <br>  {{ pred_val }}</h5> -->
+              
+              <!-- <img alt="Models Image" src={{ pred_val }}
+                      class="rounded float-left" width="1300" height="700"> -->
+          </div>
+        
+          <!-- <button type="submit" class="btn btn-primary">Predict Job</button> -->
+      
+        </form>
+        <br>
+       
+      </div>
+
+    
+   
+
+
+
+  
+  {% endblock %}
+
+  
+  
+    
