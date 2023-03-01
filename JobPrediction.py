@@ -9,7 +9,8 @@ CLUSTERS_YAML_PATH = "data/features_skills_clusters_description.yaml"
 
 import os 
 import sklearn
-import pickle
+# import pickle
+import  pickle5 as pickle
 import yaml
 import pandas as pd
 
