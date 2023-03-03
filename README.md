@@ -29,6 +29,5 @@ satisfaction and job search to education and opinions on open source software.
 ![alt text](https://github.com/MarwaRabia/Job_Prediction_deployment-_/blob/main/static/S2.png)
 
 
-```
 
 
